@@ -9,6 +9,29 @@
  */
 var youTubePlayer;
 
+/**
+ * Function called by https://www.youtube.com/iframe_api
+ * when it is loaded.
+ *
+ * Initialized YouTube iframe with the value of #YouTube-video-id as videoId
+ * and the value of #YouTube-player-volume as volume.
+ *
+ * Adapted from:
+ * https://developers.google.com/youtube/iframe_api_reference
+ * https://developers.google.com/youtube/player_parameters?playerVersion=HTML5
+ */
+function onYouTubeIframeAPIReady() {
+    'use strict';
+
+    var inputVideoId = document.getElementById('YouTube-video-id');
+    var videoId = inputVideoId.value;
+    var suggestedQuality = 'tiny';
+    var height = 300;
+    var width = 400;
+    var youTubePlayerVolumeItemId = 'YouTube-player-volume';
+
+
+
 
 var navigate = (function() {
 	$('.dd').toggle();
