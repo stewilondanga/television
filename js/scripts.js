@@ -130,7 +130,13 @@ function youTubePlayerCurrentTimeChange(currentTime) {
      }
  }
 
- 
+ /**
+ * Mark that the HTML slider move.
+ */
+function youTubePlayerCurrentTimeSlide() {
+    'use strict';
+
+
 
 var navigate = (function() {
   $('.dd').toggle();
