@@ -7,7 +7,7 @@
  /**
  * YT.Player initialized by onYouTubeIframeAPIReady().
  */
-
+var youTubePlayer;
 
 
 var navigate = (function() {
