@@ -38,6 +38,8 @@ main > section textarea {
 .margin-left-m { margin-left: 1em; }
 .margin-right-m { margin-right: 1em; }
 
+.nowrap { white-space: nowrap; }
+
 
 
     h1 {
