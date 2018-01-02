@@ -63,7 +63,10 @@ main > section textarea {
       width: 320px;
     }
 
+    main > section input[type="range"] { width: 320px; }
+    }
 
+    
 
     h1 {
     	font-family: helvetica;
