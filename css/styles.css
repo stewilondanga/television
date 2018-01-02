@@ -40,6 +40,21 @@ main > section textarea {
 
 .nowrap { white-space: nowrap; }
 
+#indicator-display {
+    background-color: #f0f0f0;
+    border-radius: 3ex;
+    display: inline-block;
+    float: right;
+    font-family: monospace;
+    height: 2ex;
+    line-height: 2ex;
+    margin: 1ex 1ex 0 0;
+    padding: 1ex;
+    text-align: center;
+    vertical-align: middle;
+    width: 2ex;
+}
+
 
 
     h1 {
