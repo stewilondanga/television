@@ -124,7 +124,13 @@ function youTubePlayerChangeVideoId() {
 function youTubePlayerCurrentTimeChange(currentTime) {
     'use strict';
 
+		youTubePlayer.personalPlayer.currentTimeSliding = false;
+     if (youTubePlayerActive()) {
+         youTubePlayer.seekTo(currentTime*youTubePlayer.getDuration()/100, true);
+     }
+ }
 
+ 
 
 var navigate = (function() {
   $('.dd').toggle();
