@@ -4,7 +4,7 @@
  *
  */
 
- /**
+/**
  * YT.Player initialized by onYouTubeIframeAPIReady().
  */
 var youTubePlayer;
@@ -21,98 +21,106 @@ var youTubePlayer;
  * https://developers.google.com/youtube/player_parameters?playerVersion=HTML5
  */
 function onYouTubeIframeAPIReady() {
-    'use strict';
+  'use strict';
 
-    var inputVideoId = document.getElementById('YouTube-video-id');
-    var videoId = inputVideoId.value;
-    var suggestedQuality = 'tiny';
-    var height = 300;
-    var width = 400;
-    var youTubePlayerVolumeItemId = 'YouTube-player-volume';
-
-
-		    function onError(event) {
-		        youTubePlayer.personalPlayer.errors.push(event.data);
-		    }
-				function onReady(event) {
-		         var player = event.target;
-
-						 player.loadVideoById({suggestedQuality: suggestedQuality,
-						                              videoId: videoId
-						                             });
-						        player.pauseVideo();
-						        youTubePlayerDisplayFixedInfos();
-						    }
-
-								function onStateChange(event) {
-						         var volume = Math.round(event.target.getVolume());
-						         var volumeItem = document.getElementById(youTubePlayerVolumeItemId);
-
-										 if (volumeItem && (Math.round(volumeItem.value) != volume)) {
-							            volumeItem.value = volume;
-							        }
-							    }
-
-									youTubePlayer = new YT.Player('YouTube-player',
-							                                  {videoId: videoId,
-							                                   height: height,
-							                                   width: width,
-							                                   playerVars: {'autohide': 0,
-							                                                'cc_load_policy': 0,
-							                                                'controls': 2,
-							                                                'disablekb': 1,
-							                                                'iv_load_policy': 3,
-							                                                'modestbranding': 1,
-							                                                'rel': 0,
-							                                                'showinfo': 0,
-							                                                'start': 3
-							                                               },
-							                                   events: {'onError': onError,
-							                                            'onReady': onReady,
-							                                            'onStateChange': onStateChange
-							                                           }
-							                                  });
-
-							    // Add private data to the YouTube object
-							    youTubePlayer.personalPlayer = {'currentTimeSliding': false,
-							                                    'errors': []};
-							}
+  var inputVideoId = document.getElementById('YouTube-video-id');
+  var videoId = inputVideoId.value;
+  var suggestedQuality = 'tiny';
+  var height = 300;
+  var width = 400;
+  var youTubePlayerVolumeItemId = 'YouTube-player-volume';
 
 
-							/**
-							 * :return: true if the player is active, else false
-							 */
-							function youTubePlayerActive() {
-							    'use strict';
+  function onError(event) {
+    youTubePlayer.personalPlayer.errors.push(event.data);
+  }
 
-							    return youTubePlayer && youTubePlayer.hasOwnProperty('getPlayerState');
-							}
+  function onReady(event) {
+    var player = event.target;
+
+    player.loadVideoById({
+      suggestedQuality: suggestedQuality,
+      videoId: videoId
+    });
+    player.pauseVideo();
+    youTubePlayerDisplayFixedInfos();
+  }
+
+  function onStateChange(event) {
+    var volume = Math.round(event.target.getVolume());
+    var volumeItem = document.getElementById(youTubePlayerVolumeItemId);
+
+    if (volumeItem && (Math.round(volumeItem.value) != volume)) {
+      volumeItem.value = volume;
+    }
+  }
+
+  youTubePlayer = new YT.Player('YouTube-player', {
+    videoId: videoId,
+    height: height,
+    width: width,
+    playerVars: {
+      'autohide': 0,
+      'cc_load_policy': 0,
+      'controls': 2,
+      'disablekb': 1,
+      'iv_load_policy': 3,
+      'modestbranding': 1,
+      'rel': 0,
+      'showinfo': 0,
+      'start': 3
+    },
+    events: {
+      'onError': onError,
+      'onReady': onReady,
+      'onStateChange': onStateChange
+    }
+  });
+
+  // Add private data to the YouTube object
+  youTubePlayer.personalPlayer = {
+    'currentTimeSliding': false,
+    'errors': []
+  };
+}
 
 
-							/**
-							 * Get videoId from the #YouTube-video-id HTML item value,
-							 * load this video, pause it
-							 * and show new infos.
-							 */
-							function youTubePlayerChangeVideoId() {
-							    'use strict';
+/**
+ * :return: true if the player is active, else false
+ */
+function youTubePlayerActive() {
+  'use strict';
 
-							    var inputVideoId = document.getElementById('YouTube-video-id');
-							    var videoId = inputVideoId.value;
+  return youTubePlayer && youTubePlayer.hasOwnProperty('getPlayerState');
+}
 
-							    youTubePlayer.cueVideoById({suggestedQuality: 'tiny',
-							                                videoId: videoId
-							                               });
-							    youTubePlayer.pauseVideo();
-							    youTubePlayerDisplayFixedInfos();
-							}
+
+/**
+ * Get videoId from the #YouTube-video-id HTML item value,
+ * load this video, pause it
+ * and show new infos.
+ */
+function youTubePlayerChangeVideoId() {
+  'use strict';
+
+  var inputVideoId = document.getElementById('YouTube-video-id');
+  var videoId = inputVideoId.value;
+
+  youTubePlayer.cueVideoById({
+    suggestedQuality: 'tiny',
+    videoId: videoId
+  });
+  youTubePlayer.pauseVideo();
+  youTubePlayerDisplayFixedInfos();
+}
+
 
 
 var navigate = (function() {
-	$('.dd').toggle();
-	$('.dd_btn').click(function() {
-		var dataName = $(this).attr('data-name');
-		$('.dd').hide();
-		$('.' + dataName).toggle();
-	});
+  $('.dd').toggle();
+  $('.dd_btn').click(function() {
+    var dataName = $(this).attr('data-name');
+    $('.dd').hide();
+    $('.' + dataName).toggle();
+  });
 })();
