@@ -31,6 +31,11 @@ function onYouTubeIframeAPIReady() {
     var youTubePlayerVolumeItemId = 'YouTube-player-volume';
 
 
+		    function onError(event) {
+		        youTubePlayer.personalPlayer.errors.push(event.data);
+		    }
+
+
 
 
 var navigate = (function() {
