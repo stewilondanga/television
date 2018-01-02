@@ -21,6 +21,8 @@ main > section div.framed > div {
 
 main > section button { padding: 0.5ex 1em; }
 
+main > section input[type="range"] { width: 400px; }
+
 
 
     h1 {
