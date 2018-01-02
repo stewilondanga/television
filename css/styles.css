@@ -19,6 +19,8 @@ main > section div.framed > div {
     padding: 1ex;
 }
 
+main > section button { padding: 0.5ex 1em; }
+
 
 
     h1 {
