@@ -115,6 +115,16 @@ function youTubePlayerChangeVideoId() {
 }
 
 
+/**
+ * Seek the video to the currentTime.
+ * (And mark that the HTML slider *don't* move.)
+ *
+ * :param currentTime: 0 <= number <= 100
+ */
+function youTubePlayerCurrentTimeChange(currentTime) {
+    'use strict';
+
+
 
 var navigate = (function() {
   $('.dd').toggle();
