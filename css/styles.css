@@ -57,6 +57,12 @@ main > section textarea {
 
 #YouTube-video-id { font-family: monospace; }
 
+@media (max-width: 600px) {
+    main > section iframe {
+      height: 240px;
+      width: 320px;
+    }
+
 
 
     h1 {
