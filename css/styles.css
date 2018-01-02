@@ -25,6 +25,14 @@ main > section input[type="range"] { width: 400px; }
 
 main > section label[for^="YouTube-player-"] { position: absolute; }
 
+main > section textarea {
+    height: 9ex;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    width: 99%;
+}
+
 
 
     h1 {
