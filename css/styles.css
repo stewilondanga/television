@@ -23,6 +23,8 @@ main > section button { padding: 0.5ex 1em; }
 
 main > section input[type="range"] { width: 400px; }
 
+main > section label[for^="YouTube-player-"] { position: absolute; }
+
 
 
     h1 {
