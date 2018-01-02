@@ -72,7 +72,8 @@ main > section textarea {
       width: 200px;
     }
 
-
+    main > section input[type="range"] { width: 200px; }
+    }
 
     h1 {
     	font-family: helvetica;
