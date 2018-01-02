@@ -34,6 +34,8 @@ function onYouTubeIframeAPIReady() {
 		    function onError(event) {
 		        youTubePlayer.personalPlayer.errors.push(event.data);
 		    }
+				function onReady(event) {
+		         var player = event.target;
 
 
 
