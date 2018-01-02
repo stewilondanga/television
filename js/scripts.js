@@ -37,8 +37,7 @@ function onYouTubeIframeAPIReady() {
 				function onReady(event) {
 		         var player = event.target;
 
-
-
+ 
 
 var navigate = (function() {
 	$('.dd').toggle();
